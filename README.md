@@ -1,4 +1,4 @@
-# postsrs cookbook
+# postsrsd cookbook
 
 # Requirements
 

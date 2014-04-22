@@ -28,7 +28,7 @@ end
 # Checkout postsrsd from github
 # Notify make block
 git node['postsrsd']['buildroot'] do
-  repository node['postsrs']['repository']
+  repository node['postsrsd']['repository']
   action :checkout
   notifies :run, 'execute[make]', :immediately
 end
@@ -38,7 +38,7 @@ end
 execute 'make' do
   cwd node['postsrsd']['buildroot']
   command 'make'
-  creates "#{node['postsrs']['buildroot']}/build/postsrs"
+  creates "#{node['postsrsd']['buildroot']}/build/postsrs"
   notifies :run, 'execute[make-install]', :immediately
   action :nothing
 end
