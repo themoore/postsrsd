@@ -3,13 +3,13 @@
 # Recipe:: default
 #
 # Copyright (C) 2014 Eric G. Wolfe
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #    http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -52,6 +52,7 @@ execute 'make-install' do
 end
 
 # Get random secret from openssl cookbook
+::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
 node.set_unless['postsrsd']['secret'] = secure_password(25)
 
 # Secret template
