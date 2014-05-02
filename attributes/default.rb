@@ -18,7 +18,7 @@
 #
 
 default['postsrsd']['buildroot'] = "#{Chef::Config[:file_cache_path]}/postsrsd"
-default['postsrsd']['repository'] = 'https://gitlab.marshall.edu/systems/mu-postsrsd.git'
+default['postsrsd']['repository'] = 'git@mugit03.marshall.edu:systems/mu-postsrsd.git'
 default['postsrsd']['packages'] = %w(cmake)
 
 default['postfix']['main']['sender_canonical_maps'] = 'tcp:127.0.0.1:10001'
